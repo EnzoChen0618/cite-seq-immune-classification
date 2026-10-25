@@ -1,0 +1,27 @@
+component,parameter,value
+Label filtering,PBMC label source,00_label_inputs/pbmc_celltypist_predictions.csv
+Label filtering,CD8 label source,00_label_inputs/cd8_celltypist_predictions.csv
+Label filtering,Minimum CellTypist probability,0.5
+Label filtering,CD8 label column,majority_voting
+Label filtering,CD8 probability column,celltype_ref_prob
+Label filtering,CD8 label set,all
+RNA preprocessing,Highly variable genes,2000
+RNA preprocessing,PCA components,50
+ADT preprocessing,Normalization,CLR
+WNN,Neighbors,"15 for PBMC, 30 in the saved CD8 WNN run"
+WNN,Leiden resolution,"0.8 for PBMC, 0.6 in the saved CD8 WNN run"
+WNN,Classifier representation,20-component SVD embedding of the saved WNN connectivities graph
+totalVI,Latent representation,Saved X_totalvi/X_totalVI embedding
+MOFA+,Factors,Saved X_mofa latent factors
+Evaluation split,Train/test,Stratified 80/20
+Evaluation split,Seeds,"7, 21, 42, 77, 2024"
+Random Forest,n_estimators,200
+Random Forest,max_depth,15
+Random Forest,min_samples_split,5
+Random Forest,class_weight,balanced
+XGBoost,n_estimators,300
+XGBoost,learning_rate,0.05
+XGBoost,max_depth,5
+XGBoost,subsample,0.8
+XGBoost,colsample_bytree,0.8
+XGBoost,tree_method,hist

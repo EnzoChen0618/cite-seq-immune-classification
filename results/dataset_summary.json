@@ -1,0 +1,34 @@
+[
+  {
+    "dataset": "PBMC",
+    "n_cells": 1621,
+    "n_classes": 9,
+    "label_probability_threshold": 0.5,
+    "class_counts": {
+      "ILC": 757,
+      "B cells": 449,
+      "Monocytes": 251,
+      "DC": 59,
+      "Plasma cells": 52,
+      "T cells": 16,
+      "pDC": 16,
+      "Myelocytes": 13,
+      "Macrophages": 8
+    }
+  },
+  {
+    "dataset": "CD8",
+    "n_cells": 387,
+    "n_classes": 7,
+    "label_probability_threshold": 0.5,
+    "class_counts": {
+      "Tcm/Naive helper T cells": 214,
+      "CD16+ NK cells": 67,
+      "Naive B cells": 40,
+      "NK cells": 19,
+      "CD16- NK cells": 18,
+      "Non-classical monocytes": 17,
+      "Classical monocytes": 12
+    }
+  }
+]

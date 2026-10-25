@@ -1,0 +1,55 @@
+{
+  "label_filtering": [
+    "Low-confidence CellTypist labels are filtered first using probability >= 0.5.",
+    "Labels are selected once per dataset before evaluation.",
+    "The same retained cells are used for RNA-only, ADT-only, RNA+ADT concatenation, WNN, totalVI, and MOFA+.",
+    "Classes with fewer than 5 cells after alignment are removed before stratified splitting."
+  ],
+  "split": {
+    "type": "stratified train/test split",
+    "train_fraction": 0.8,
+    "test_fraction": 0.2,
+    "seeds": [
+      7,
+      21,
+      42,
+      77,
+      2024
+    ]
+  },
+  "models_run": [
+    "rf",
+    "xgb"
+  ],
+  "random_forest": {
+    "n_estimators": 200,
+    "max_depth": 15,
+    "min_samples_split": 5,
+    "class_weight": "balanced"
+  },
+  "xgboost": {
+    "n_estimators": 300,
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "tree_method": "hist"
+  },
+  "feature_notes": {
+    "RNA": "PBMC RNA: 04_feature_inputs/pbmc/pbmc_rna_preprocessed.csv; CD8 RNA: 04_feature_inputs/cd8/rna_scaled_hvg.csv.",
+    "ADT": "PBMC ADT: 04_feature_inputs/pbmc/pbmc_adt_clr_preprocessed_patched.h5ad; CD8 ADT: 04_feature_inputs/cd8/GSE100866_CD8_merged-ADT_umi_clr-transformed.csv.",
+    "WNN": "Uses a 20-component SVD embedding of the saved WNN connectivities graph, not Leiden clusters or cluster IDs.",
+    "totalVI": "Uses saved totalVI latent representations: 04_feature_inputs/pbmc/pbmc_totalvi_fused.h5ad; 04_feature_inputs/cd8/CD8_totalVI_fused.h5ad.",
+    "MOFA+": "Uses saved MOFA latent factors: 04_feature_inputs/pbmc/pbmc_mofa_fused.h5ad; 04_feature_inputs/cd8/CD8_mofa_fused.h5ad."
+  },
+  "label_sources": {
+    "PBMC": "00_label_inputs/pbmc_celltypist_predictions.csv",
+    "CD8": "00_label_inputs/cd8_celltypist_predictions.csv"
+  },
+  "cd8_label_settings": {
+    "label_column": "majority_voting",
+    "probability_column": "celltype_ref_prob",
+    "label_set": "all",
+    "allowed_labels": "all"
+  }
+}
