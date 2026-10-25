@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+rerun_results/
+rerun_figures/
+exploratory_figures/
+00_label_inputs/*
+04_feature_inputs/*
+!00_label_inputs/.gitkeep
+!04_feature_inputs/.gitkeep
