@@ -54,3 +54,10 @@ python 01_code/rerun_review_experiments.py \
 ## Included results
 
 `results/all_seed_metrics.csv` gives per-seed classification metrics, `results/summary_metrics_mean_sd.csv` gives mean and standard deviation, and the remaining CSV/JSON files record the manuscript tables, cohort counts, settings, and protocol. No cell-level records are included.
+
+## Contributors
+
+- Enzo Chen
+- Yutong Zheng
+- Aike Liu
+- Fengyang Weng
