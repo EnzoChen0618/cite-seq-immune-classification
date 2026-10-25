@@ -57,7 +57,7 @@ python 01_code/rerun_review_experiments.py \
 
 ## Contributors
 
-- Enzo Chen
-- Yutong Zheng
-- Aike Liu
+- Aiying Chen
 - Fengyang Weng
+- Aike Liu
+- Yutong Zheng
